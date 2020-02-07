@@ -49,6 +49,19 @@ flutter:
     - assets/images/meditaion.png
     - assets/images/2.png
     - assets/images/female_above40.jpg
+    - assets/images/powered_by.png
+    - assets/images/logo.png
+    - assets/images/marie_img.jpeg
+    - assets/images/lynda.jpg
+    - assets/images/Michael_img.jpg
+    - assets/images/michael.jpg
+    - assets/images/blood_1.png
+    - assets/images/heartrate.png
+    - assets/images/temprature.png
+    - assets/images/splash1.jpg
+    - assets/images/care1.png
+    - assets/images/care-2.png
+    - assets/images/care-3.png
 
   fonts:
 

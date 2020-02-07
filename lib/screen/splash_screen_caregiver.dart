@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:home_care_app/constant/constant.dart';
 import 'package:home_care_app/model/splash_model.dart';
 import 'package:home_care_app/screen/homescreen.dart';
+import 'package:home_care_app/widget/custompaint.dart';
 
 class SplashScreenCaregiver extends StatefulWidget {
   @override
@@ -189,13 +190,10 @@ class _SplashScreenCaregiverState extends State<SplashScreenCaregiver> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: RaisedButton(
-                        color: Color.fromRGBO(68, 51, 156, 1),
+                        color: Color.fromRGBO(114, 95, 241, 1).withOpacity(1.0),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreen()),
-                          );
+                          Navigator.of(context).pushReplacementNamed(Constants.HOME_SCREEN);
+
                         },
                         child: Text(
                           'GO TO HOME SCREEN',
@@ -236,13 +234,33 @@ class _SplashScreenCaregiverState extends State<SplashScreenCaregiver> {
   Widget _buildSplashList(SplashModel items, int index) {
     return Padding(
       padding: EdgeInsets.only(top: 20.0),
-      child: Align(
-        // alignment: Alignment.center,
-        child: Image.asset(
-          items.img,
-          fit: BoxFit.fitHeight,
-          height: _height / 2.7,
-        ),
+      child: Stack(
+        children: <Widget>[
+         Align(
+           alignment:Alignment.center,
+           child:Transform.rotate(
+               angle:0.4,
+             child:ClipOval(
+               child: Container(
+                 alignment: Alignment.center,
+                 height:_height/4.5,
+                 width: _width/1.2,
+                 color:Color.fromRGBO(114, 95, 241, 1).withOpacity(1.0),
+               ),
+               // clipper:TopWaveClipper(),
+             ),
+
+           ),
+         ),
+          Align(
+            // alignment: Alignment.center,
+            child: Image.asset(
+              items.img,
+              fit: BoxFit.fitHeight,
+              height: _height / 2.7,
+            ),
+          ),
+        ],
       ),
     );
   }

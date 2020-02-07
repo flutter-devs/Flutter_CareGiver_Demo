@@ -94,13 +94,9 @@ class _RecentCareGiversState extends State<RecentCareGivers> {
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(top: 20.0, left:19.0, right:19.0),
+                      margin: EdgeInsets.only(top: 20.0, left:20.0, right:20.0),
                       height: _height /8,
-                      width:_width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          color:Colors.white
-                      ),
+                    //  width:_width,
                       child:Card(
                         elevation:2.0,
                         shape:RoundedRectangleBorder(
@@ -110,7 +106,7 @@ class _RecentCareGiversState extends State<RecentCareGivers> {
                           contentPadding:EdgeInsets.only(top:5.0,left: 10.0,right: 10.0),
                           leading:CircleAvatar(
                             child:ClipOval(
-                              child:Image.asset('assets/images/mans_img.jpeg',height:_height,width:_width,fit:BoxFit.fill,),
+                              child:Image.asset('assets/images/marie_img.jpeg',height:_height,width:_width,fit:BoxFit.fill,),
                             ),
                           ),
                           title:Row(
@@ -150,10 +146,6 @@ class _RecentCareGiversState extends State<RecentCareGivers> {
                       margin: EdgeInsets.only(top: 10.0, left:19.0, right:19.0),
                       height: _height /8,
                       width:_width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          color:Colors.white
-                      ),
                       child:Card(
                         elevation:2.0,
                         shape:RoundedRectangleBorder(
@@ -163,7 +155,7 @@ class _RecentCareGiversState extends State<RecentCareGivers> {
                           contentPadding:EdgeInsets.only(top:5.0,left: 10.0,right: 10.0,bottom:10.0),
                           leading:CircleAvatar(
                             child:ClipOval(
-                              child:Image.asset('assets/images/mans_img.jpeg',height:_height,width:_width,fit:BoxFit.fill,),
+                              child:Image.asset('assets/images/michael.jpg',height:_height,width:_width,fit:BoxFit.fill,),
                             ),
                           ),
                           title:Row(

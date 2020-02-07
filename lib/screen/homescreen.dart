@@ -399,10 +399,7 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
                   color: Colors.white.withOpacity(0.3),
                 ),
-                child: Icon(
-                  Icons.favorite_border,
-                  color: Colors.white,
-                ),
+                child:Image.asset(items.img,height:_height/30.0,color:Colors.white,)
               ),
               Text(
                 items.title,
