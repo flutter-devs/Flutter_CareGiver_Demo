@@ -4,7 +4,6 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:home_care_app/constant/constant.dart';
 import 'package:home_care_app/model/splash_model.dart';
-import 'package:home_care_app/screen/homescreen.dart';
 import 'package:home_care_app/widget/custompaint.dart';
 
 class SplashScreenCaregiver extends StatefulWidget {
@@ -41,7 +40,7 @@ class _SplashScreenCaregiverState extends State<SplashScreenCaregiver> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'caregiver',
+          'Care giver',
           style: TextStyle(
               fontFamily: 'Roboto Medium', fontWeight: FontWeight.w600),
         ),
@@ -74,140 +73,134 @@ class _SplashScreenCaregiverState extends State<SplashScreenCaregiver> {
             ),
             Expanded(
               child: Container(
+                //color:Colors.orange,
                 child: Visibility(
                   visible:
-                      currentPageValue == splashModel.length - 1 ? false : true,
-                  child: Container(
-                    //color:Colors.cyan,
-                    width: _width,
-                    //height:_height/1.5,
-                    //margin: EdgeInsets.only(top:10.0),
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 10.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                for (int i = 0; i < splashModel.length; i++)
-                                  if (i == currentPageValue) ...[
-                                    circleBar(true)
-                                  ] else
-                                    circleBar(false),
-                              ],
+                      currentPageValue == splashModel.length ? false : true,
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            for (int i = 0; i < splashModel.length; i++)
+                              if (i == currentPageValue) ...[
+                                circleBar(true)
+                              ] else
+                                circleBar(false),
+                          ],
+                        ),
+
+
+
+                        Visibility(
+                          visible: currentPageValue == splashModel.length-1 ? false : true,
+                          child:Expanded(child:Container(
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                            // color:Colors.red,
+                            child: Text(
+                              'We provided experienced & professional care in the home.',
+                              style: TextStyle(
+                                  fontFamily: 'Roboto Regular',
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.5,
+                                  height: 1.4),
+                              textAlign: TextAlign.center,
+                              textScaleFactor: 1.3,
                             ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                              // color:Colors.red,
-                              child: Text(
-                                'We provided experienced & professional care in the home.',
-                                style: TextStyle(
-                                    fontFamily: 'Roboto Regular',
+                          ),),
+                        ),
+
+                        Visibility(
+                          visible: currentPageValue == splashModel.length-1 ? false : true,
+                          child: Expanded(child:Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              CircleAvatar(
+                                backgroundColor:
+                                Color.fromRGBO(142, 97, 244, 1)
+                                    .withOpacity(1.0),
+                                child: InkWell(
+                                  onTap: () {
+                                    int page = currentPageValue - 1;
+                                    controller.animateToPage(page,
+                                        duration: Duration(seconds: 1),
+                                        curve: Curves.easeOut);
+                                    currentPageValue = page;
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14.5,
-                                    height: 1.4),
-                                textAlign: TextAlign.center,
-                                textScaleFactor: 1.3,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              CircleAvatar(
+                                backgroundColor:
+                                Color.fromRGBO(142, 97, 244, 1)
+                                    .withOpacity(1.0),
+                                child: InkWell(
+                                  onTap: () {
+                                    int page = currentPageValue + 1;
+                                    controller.animateToPage(page,
+                                        duration: Duration(seconds: 1),
+                                        curve: Curves.easeOut);
+                                    currentPageValue = page;
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_forward,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),),
+                        ),
+
+                        Visibility(
+                          visible: currentPageValue == splashModel.length - 1 ? true : false,
+                          child:Container(
+                            child: ButtonTheme(
+                              minWidth: _width,
+                              height: _height / 16,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: RaisedButton(
+                                color: Color.fromRGBO(114, 95, 241, 1)
+                                    .withOpacity(1.0),
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .pushReplacementNamed(Constants.HOME_SCREEN);
+                                },
+                                child: Text(
+                                  'GO TO HOME SCREEN',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto Medium',
+                                      fontSize: 16.0,
+                                      color: Colors.white),
+                                ),
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                CircleAvatar(
-                                  backgroundColor:
-                                      Color.fromRGBO(142, 97, 244, 1)
-                                          .withOpacity(1.0),
-                                  child: InkWell(
-                                    onTap: () {
-                                      int page = currentPageValue - 1;
-                                      controller.animateToPage(page,
-                                          duration: Duration(seconds: 1),
-                                          curve: Curves.easeOut);
-                                      currentPageValue = page;
-                                    },
-                                    child: Icon(
-                                      Icons.arrow_back,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                CircleAvatar(
-                                  backgroundColor:
-                                      Color.fromRGBO(142, 97, 244, 1)
-                                          .withOpacity(1.0),
-                                  child: InkWell(
-                                    onTap: () {
-                                      int page = currentPageValue + 1;
-                                      controller.animateToPage(page,
-                                          duration: Duration(seconds: 1),
-                                          curve: Curves.easeOut);
-                                      currentPageValue = page;
-                                    },
-                                    child: Icon(
-                                      Icons.arrow_forward,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ),
             ),
-            Visibility(
-              visible:
-                  currentPageValue == splashModel.length - 1 ? true : false,
 
-              // visible:currentPageValue == onBoardingList.length?true:false,
-              child: Stack(
-                alignment: Alignment.topLeft,
-                children: <Widget>[
-                  Container(
-                    margin:
-                        EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0),
-                    child: ButtonTheme(
-                      minWidth: _width,
-                      height: _height / 16,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: RaisedButton(
-                        color: Color.fromRGBO(114, 95, 241, 1).withOpacity(1.0),
-                        onPressed: () {
-                          Navigator.of(context).pushReplacementNamed(Constants.HOME_SCREEN);
 
-                        },
-                        child: Text(
-                          'GO TO HOME SCREEN',
-                          style: TextStyle(
-                              fontFamily: 'Roboto Medium',
-                              fontSize: 16.0,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
           ],
         ),
       ),
@@ -236,22 +229,21 @@ class _SplashScreenCaregiverState extends State<SplashScreenCaregiver> {
       padding: EdgeInsets.only(top: 20.0),
       child: Stack(
         children: <Widget>[
-         Align(
-           alignment:Alignment.center,
-           child:Transform.rotate(
-               angle:0.4,
-             child:ClipOval(
-               child: Container(
-                 alignment: Alignment.center,
-                 height:_height/4.5,
-                 width: _width/1.2,
-                 color:Color.fromRGBO(114, 95, 241, 1).withOpacity(1.0),
-               ),
-               // clipper:TopWaveClipper(),
-             ),
-
-           ),
-         ),
+          Align(
+            alignment: Alignment.center,
+            child: Transform.rotate(
+              angle: 0.4,
+              child: ClipOval(
+                child: Container(
+                  alignment: Alignment.center,
+                  height: _height / 4.5,
+                  width: _width / 1.2,
+                  color: Color.fromRGBO(114, 95, 241, 1).withOpacity(1.0),
+                ),
+                // clipper:TopWaveClipper(),
+              ),
+            ),
+          ),
           Align(
             // alignment: Alignment.center,
             child: Image.asset(

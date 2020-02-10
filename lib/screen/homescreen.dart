@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:home_care_app/constant/constant.dart';
 import 'package:home_care_app/model/dailyactivity_model.dart';
 import 'package:home_care_app/model/plancare.dart';
+import 'package:home_care_app/screen/caregiver_homescreen.dart';
 import 'package:home_care_app/screen/recentcaregivers.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -27,11 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int _page = 0;
 
   final List<Widget> _children = [
-    HomeScreenOne(),
+    CareGiverHomeScreen(),
     RecentCareGivers(),
-    HomeScreenOne(),
-    HomeScreenOne(),
-    HomeScreenOne(),
+    CareGiverHomeScreen(),
+    CareGiverHomeScreen(),
+    CareGiverHomeScreen(),
   ];
 
   @override
@@ -205,7 +206,7 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
               width: _width,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                borderRadius: BorderRadius.only(topLeft:Radius.circular(30.0),topRight:Radius.circular(30.0)),
               ),
               child: SingleChildScrollView(
                 // physics: NeverScrollableScrollPhysics(),
