@@ -3,16 +3,16 @@
 A Flutter app to showcase Care Giver Demo.
 
 # Demo
-<img height="480px" src="https://github.com/flutter-devs/Flutter_Social_Media_Demo/blob/master/screens/demo.gif">
+<img height="480px" src="https://github.com/flutter-devs/Flutter_CareGiver_Demo/blob/home_care_app/screens/demo.gif">
 
 
 
 # Android Screen
-<img height="480px" src="https://github.com/flutter-devs/Flutter_Social_Media_Demo/blob/master/screens/android1.png"> <img height="480px" src="https://github.com/flutter-devs/Flutter_Social_Media_Demo/blob/master/screens/android2.png"> <img height="480px" src="https://github.com/flutter-devs/Flutter_Social_Media_Demo/blob/master/screens/android3.png">  
+<img height="480px" src="https://github.com/flutter-devs/Flutter_CareGiver_Demo/blob/home_care_app/screens/android1.png"> <img height="480px" src="https://github.com/flutter-devs/Flutter_CareGiver_Demo/blob/home_care_app/screens/android2.png"> <img height="480px" src="https://github.com/flutter-devs/Flutter_CareGiver_Demo/blob/home_care_app/screens/android3.png">  
 
 
 # iOS Screen
-<img height="480px" src="https://github.com/flutter-devs/Flutter_Social_Media_Demo/blob/master/screens/ios1.png"> <img height="480px" src="https://github.com/flutter-devs/Flutter_Social_Media_Demo/blob/master/screens/ios2.png">  <img height="480px" src="https://github.com/flutter-devs/Flutter_Social_Media_Demo/blob/master/screens/ios3.png">
+<img height="480px" src="https://github.com/flutter-devs/Flutter_CareGiver_Demo/blob/home_care_app/screens/iphone1.png"> <img height="480px" src="https://github.com/flutter-devs/Flutter_CareGiver_Demo/blob/home_care_app/screens/iphone2.png">  <img height="480px" src="https://github.com/flutter-devs/Flutter_CareGiver_Demo/blob/home_care_app/screens/iphone3.png">
 
 
 
